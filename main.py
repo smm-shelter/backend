@@ -1,6 +1,9 @@
+from src.utils.log import logger
+
+
 def main():
-    print("Hello from backend!")
-    print("Need to start web server")
+    logger.info("Hello from backend!")
+    logger.critical("Need to start web server")
 
 
 if __name__ == "__main__":

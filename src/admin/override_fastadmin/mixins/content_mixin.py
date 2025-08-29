@@ -5,6 +5,7 @@ from typing import Any
 from src.admin.override_fastadmin.utils import ContentParameter, DocumentPreview
 from src.unit_of_work import UnitOfWork
 from src.utils.repository import SQLAlchemyRepository
+from src.utils.log import logger
 
 
 class ContentMixin:
@@ -144,7 +145,7 @@ class ContentMixin:
         elif object.startswith("data"):
             return False
         else:
-            print(f"uploading_object is strange {object[:30]}")
+            logger.warning(f"uploading_object is strange {object[:30]}")
             return True
 
     def _get_filename_from_existing_object(self, object: str) -> str:

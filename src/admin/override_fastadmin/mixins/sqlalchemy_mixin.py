@@ -7,6 +7,8 @@ from src.admin.override_fastadmin.utils import CustomColumn
 from src.unit_of_work import UnitOfWork
 from src.utils.exceptions import ResultNotFound, WrongCredentials
 from src.utils.repository import SQLAlchemyRepository, SQLALchemyUserRepository
+from src.utils.log import logger
+
 
 derived_base_model = TypeVar("derived_base_model", bound=BaseModel)
 _sentinel: Any = object()
@@ -102,7 +104,7 @@ class SqlAlchemyMixin(Generic[derived_base_model]):
             except WrongCredentials:
                 return None
             except ResultNotFound:
-                print(phone, password)
+                logger.debug("system not found user with phone %s and with password %s", phone, password)
                 return None
 
     async def change_password(self, id: int, password: str) -> None:

@@ -6,10 +6,10 @@ import botocore.exceptions
 from aioboto3 import Session
 
 from src.settings import settings
-from src.utils.filestorage import FileStorageProtocol
+from .protocol import AbstractFileStorageRepository
 
 
-class FileStorageRepository(FileStorageProtocol):
+class FileStorageRepository(AbstractFileStorageRepository):
     def __init__(self, session: Session, settings=settings) -> None:
         self.session = session
 

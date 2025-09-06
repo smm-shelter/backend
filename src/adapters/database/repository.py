@@ -1,5 +1,4 @@
-from abc import abstractmethod
-from typing import Any, Optional, Protocol
+from typing import Any, Optional
 
 from bcrypt import checkpw, gensalt, hashpw
 from sqlalchemy import func, insert, select, update
@@ -9,16 +8,13 @@ from sqlalchemy.sql.base import ExecutableOption
 
 from src.utils.exceptions import ForeignKeyError, ResultNotFound, WrongCredentials
 
+from .protocol import AbstractDatabaseRepository
+
+
 _sentinel: Any = object()
 
 
-class AbstractRepository(Protocol):
-    @abstractmethod
-    async def add_one(self, **data):
-        raise NotImplementedError
-
-
-class SQLAlchemyRepository(AbstractRepository):
+class SQLAlchemyRepository(AbstractDatabaseRepository):
     model = _sentinel
 
     def __init__(self, session: AsyncSession):

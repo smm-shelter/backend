@@ -2,7 +2,7 @@ from abc import abstractmethod
 from typing import BinaryIO, Protocol
 
 
-class FileStorageProtocol(Protocol):
+class AbstractFileStorageRepository(Protocol):
     @abstractmethod
     async def upload_file(
         self, file: BinaryIO, mimetype: str, new_filename: str | None = None

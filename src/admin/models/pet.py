@@ -1,7 +1,7 @@
 from fastadmin import WidgetType, register
 
 from src.adapters.database.models import Pet
-from src.adapters.database.repositories import PetRepository, PetContentRepository
+from src.adapters.database.repository_gateway import PetRepository, PetContentRepository
 from src.admin.override_fastadmin import CustomModelAdmin, ContentParameter
 from src.schemas.admin.pet import (
     PetCreate,

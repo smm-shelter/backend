@@ -1,7 +1,7 @@
 from fastadmin import WidgetType, register
 
 from src.adapters.database.models import Manager
-from src.adapters.database.repositories import ManagerRepository
+from src.adapters.database.repository_gateway import ManagerRepository
 from src.admin.override_fastadmin import CustomModelAdmin
 from src.schemas.admin.manager import (
     ManagersCreate,

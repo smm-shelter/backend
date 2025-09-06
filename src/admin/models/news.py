@@ -1,7 +1,7 @@
 from fastadmin import WidgetType, register
 
 from src.adapters.database.models import News
-from src.adapters.database.repositories import NewsRepository, NewsContentRepository
+from src.adapters.database.repository_gateway import NewsRepository, NewsContentRepository
 from src.admin.override_fastadmin import CustomModelAdmin, ContentParameter
 from src.schemas.admin.news import (
     NewsCreate,

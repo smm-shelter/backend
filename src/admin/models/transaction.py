@@ -1,7 +1,7 @@
 from fastadmin import WidgetType, register
 
 from src.adapters.database.models import Transaction
-from src.adapters.database.repositories import TransactionRepository, TransactionContentRepository
+from src.adapters.database.repository_gateway import TransactionRepository, TransactionContentRepository
 from src.admin.override_fastadmin import CustomModelAdmin, ContentParameter
 from src.schemas.admin.transaction import (
     TransactionCreate,

@@ -6,7 +6,7 @@ from sqlalchemy import BIGINT, Integer
 from src.admin.override_fastadmin.utils import CustomColumn
 from src.unit_of_work import UnitOfWork
 from src.utils.exceptions import ResultNotFound, WrongCredentials
-from src.utils.repository import SQLAlchemyRepository, SQLALchemyUserRepository
+from src.adapters.database.repository import SQLAlchemyRepository, SQLALchemyUserRepository
 from src.utils.log import logger
 
 

@@ -4,7 +4,7 @@ from typing import Any
 
 from src.admin.override_fastadmin.utils import ContentParameter, DocumentPreview, compress_image
 from src.unit_of_work import UnitOfWork
-from src.utils.repository import SQLAlchemyRepository
+from src.adapters.database.repository import SQLAlchemyRepository
 from src.utils.log import logger
 
 

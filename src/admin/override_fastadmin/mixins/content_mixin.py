@@ -2,7 +2,7 @@ import base64
 from io import BytesIO
 from typing import Any
 
-from src.admin.override_fastadmin.utils import ContentParameter, DocumentPreview, compress_image
+from src.admin.override_fastadmin.utils import ContentParameter, DocumentPreview
 from src.unit_of_work import UnitOfWork
 from src.adapters.database.repository import SQLAlchemyRepository
 from src.log import logger
@@ -141,12 +141,6 @@ class ContentMixin:
         mimetype = metadata.replace("data:", "")
         file = BytesIO(base64.b64decode(file_base64))
         logger.debug("metadata: %s ; mimetype %s", metadata, mimetype)
-        if mimetype in ["image/png", "image/jpeg"]:
-            logger.debug("Start compressing object")
-            old_size_nbytes = file.getbuffer().nbytes
-            file = compress_image(file, mimetype.split("/")[-1])
-            new_size_nbytes = file.getbuffer().nbytes
-            logger.debug("compressing: was %s, became %s, compressing %s", old_size_nbytes, new_size_nbytes, new_size_nbytes/old_size_nbytes)
 
         return await uow.file_storage.upload_file(file, mimetype)
     

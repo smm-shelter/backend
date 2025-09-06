@@ -1,7 +1,11 @@
-from datetime import datetime
+from datetime import datetime, UTC
 
 from pydantic import BaseModel, Field
-from src.utils.time import utc_signed_now
+
+
+def utc_signed_now():
+    return datetime.now(UTC)
+
 
 class TransactionCreate(BaseModel):
     incoming: bool = False

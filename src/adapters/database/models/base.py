@@ -4,7 +4,7 @@ from sqlalchemy import BIGINT, TIMESTAMP, String
 from sqlalchemy.ext.asyncio import AsyncAttrs
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-from src.utils.time import utc_signed_now
+from ..time_factory import utc_signed_now
 
 
 class Base(AsyncAttrs, DeclarativeBase):

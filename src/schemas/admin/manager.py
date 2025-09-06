@@ -1,7 +1,7 @@
 from typing import Annotated, Optional
 
 from pydantic import BaseModel, Field, PlainValidator
-from src.utils.password import hash_password
+from src.admin.tools.password import hash_password
 
 
 class ManagersCreate(BaseModel):

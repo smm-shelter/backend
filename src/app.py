@@ -6,7 +6,7 @@ from starlette.responses import JSONResponse
 from src.api import main_api_router
 
 from src.settings import settings
-from src.utils.exceptions import (
+from src.exceptions import (
     ResultNotFound,
 )
 

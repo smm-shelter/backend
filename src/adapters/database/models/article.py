@@ -4,7 +4,7 @@ from sqlalchemy import TIMESTAMP, ForeignKey, String
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from src.utils.time import utc_signed_now
+from ..time_factory import utc_signed_now
 
 from .base import Base, BaseContent
 

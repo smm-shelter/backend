@@ -1,4 +1,4 @@
-from src.utils.log import logger
+from src.log import logger
 
 
 def main():

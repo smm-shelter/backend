@@ -5,9 +5,9 @@ from sqlalchemy import BIGINT, Integer
 
 from src.admin.override_fastadmin.utils import CustomColumn
 from src.unit_of_work import UnitOfWork
-from src.utils.exceptions import ResultNotFound, WrongCredentials
+from src.exceptions import ResultNotFound, WrongCredentials
 from src.adapters.database.repository import SQLAlchemyRepository, SQLALchemyUserRepository
-from src.utils.log import logger
+from src.log import logger
 
 
 derived_base_model = TypeVar("derived_base_model", bound=BaseModel)

@@ -6,7 +6,7 @@ from sqlalchemy.exc import IntegrityError, NoResultFound
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.base import ExecutableOption
 
-from src.utils.exceptions import ForeignKeyError, ResultNotFound, WrongCredentials
+from src.exceptions import ForeignKeyError, ResultNotFound, WrongCredentials
 
 from .protocol import AbstractDatabaseRepository
 

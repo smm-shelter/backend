@@ -62,7 +62,7 @@ class FileStorageRepository(FileStorageProtocol):
             raise err
         return True
 
-    async def delete_file(self, filename: str):
+    async def delete_file_by_filename(self, filename: str):
         async with self.session.resource(
             service_name="s3",
             endpoint_url=settings.s3_url,

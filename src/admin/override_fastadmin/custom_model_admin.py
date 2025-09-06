@@ -113,7 +113,7 @@ class CustomModelAdmin(SqlAlchemyMixin, ContentMixin, FastAdminMixin):
         """
         просто отдаём id и весь payload на upload_objects
         """
-        await self.upload_objects(record_id, payload)
+        await self.process_incoming_record_with_objects(record_id, payload)
 
         return await self.get_obj(record_id)
 

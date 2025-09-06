@@ -16,7 +16,7 @@ class FileStorageProtocol(Protocol):
         raise NotImplementedError
 
     @abstractmethod
-    async def delete_file(self, filename: str) -> None:
+    async def delete_file_by_filename(self, filename: str) -> None:
         raise NotImplementedError
 
     @abstractmethod

@@ -1,3 +1,5 @@
+from typing import Literal
+
 from functools import cached_property
 
 from pydantic import HttpUrl
@@ -6,6 +8,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    MODE: Literal["production", "debug"] = "production"
 
     ADMIN_PATH: str
 

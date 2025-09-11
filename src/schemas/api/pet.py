@@ -1,6 +1,7 @@
 from pydantic import BaseModel, ConfigDict
 
 from src.adapters.database.models import GenderEnum
+from .content import ContentSchema
 
 class PetSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -13,10 +14,10 @@ class PetSchema(BaseModel):
     sterilized: bool
     type_id: int
     type: "PetTypeSchema"
-
+    
+    contents: list[ContentSchema]
 
 class PetTypeSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     name: str
-

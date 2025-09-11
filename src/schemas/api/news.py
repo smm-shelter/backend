@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict
+from .content import ContentSchema
 
 
 class NewsSchema(BaseModel):
@@ -10,3 +11,5 @@ class NewsSchema(BaseModel):
     title: str
     text: str
     publish_date: datetime
+
+    contents: list[ContentSchema]
